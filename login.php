@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
           <div class="col-md-6">
             <div class="card-body">
               <div class="d-flex flex-row bd-highlight mb-3 brand-wrapper">
-                <img src="../assets/img/logo.png" alt="logo" class="logo text-lg">
+                <img src="assets/img/logo.png" alt="logo" class="logo text-lg">
                 <h2 class="font-weight-bold">Bimasakti</h2>
               </div>
               <div class="d-flex flex-row bd-highlight mb-3 brand-wrapper">
@@ -37,8 +37,7 @@
                   <label for="password" class="sr-only">Password</label>
                   <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                 </div>
-                <input name="login" id="login" class="btn btn-block login-btn mb-4 btn-primary" type="button"
-                  value="Login">
+                <input name="login" id="login" class="btn btn-block login-btn mb-4 btn-primary" type="button" value="Login">
               </form>
               <p class="login-card-footer-text">Belum punya akun? <a href="#!" class="text-reset">Register disini</a>
               </p>
@@ -46,7 +45,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <img src="../assets/img/sekolah2.png" alt="login" class="login-card-img">
+            <img src="assets/img/sekolah2.png" alt="login" class="login-card-img">
           </div>
         </div>
       </div>

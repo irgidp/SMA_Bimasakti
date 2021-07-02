@@ -13,19 +13,17 @@
 
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -60,7 +58,7 @@
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Welcome to <span>SMA BIMASAKTI</span></h1>
       <h2>Web ini dibuat untuk pengajar disekolah Bimasakti</h2>
-      <a href="indexlogin.php" class="btn-get-started scrollto">Login</a>
+      <a href="login.php" class="btn-get-started scrollto">Login</a>
     </div>
   </section><!-- End Hero -->
 
@@ -111,7 +109,7 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="../assets/img/sekolah2.png" class="img-fluid" alt="">
+            <img src="assets/img/sekolah2.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <h3>About Us</h3>
@@ -146,8 +144,7 @@
           <div class="col-lg-4 col-4">
             <div class="count-box">
               <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1050" data-purecounter-duration="1"
-                class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="1050" data-purecounter-duration="1" class="purecounter"></span>
               <p>Siswa</p>
             </div>
           </div>
@@ -155,8 +152,7 @@
           <div class="col-lg-4 col-4">
             <div class="count-box">
               <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="70" data-purecounter-duration="1"
-                class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="70" data-purecounter-duration="1" class="purecounter"></span>
               <p>Pengajar</p>
             </div>
           </div>
@@ -164,8 +160,7 @@
           <div class="col-lg-4 col-4 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1"
-                class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1" class="purecounter"></span>
               <p>Staff</p>
             </div>
           </div>
@@ -201,9 +196,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/ruangsiswa.jpg" class="img-fluid" alt="">
-                <a href="../assets/img/ruangsiswa.jpg" data-gallery="portfolioGallery"
-                  class="link-preview portfolio-lightbox" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/ruangsiswa.jpg" class="img-fluid" alt="">
+                <a href="assets/img/ruangsiswa.jpg" data-gallery="portfolioGallery" class="link-preview portfolio-lightbox" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -217,9 +211,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/ruangstaff.png" class="img-fluid" alt="">
-                <a href="../assets/img/ruangstaff.png" class="link-preview portfolio-lightbox"
-                  data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/ruangstaff.png" class="img-fluid" alt="">
+                <a href="assets/img/ruangstaff.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -233,9 +226,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/perpus.jpg" class="img-fluid" alt="">
-                <a href="../assets/img/perpus.jpg" class="link-preview portfolio-lightbox"
-                  data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/perpus.jpg" class="img-fluid" alt="">
+                <a href="assets/img/perpus.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -249,9 +241,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/ruangguru1.jpg" class="img-fluid" alt="">
-                <a href="../assets/img/ruangguru1.jpg" class="link-preview portfolio-lightbox"
-                  data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/ruangguru1.jpg" class="img-fluid" alt="">
+                <a href="assets/img/ruangguru1.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -265,9 +256,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/dapurstaff.jpg" class="img-fluid" alt="">
-                <a href="../assets/img/dapurstaff.jpg" class="link-preview portfolio-lightbox"
-                  data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/dapurstaff.jpg" class="img-fluid" alt="">
+                <a href="assets/img/dapurstaff.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -281,9 +271,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/wcsiswa.jpg" class="img-fluid" alt="">
-                <a href="../assets/img/wcsiswa.jpg" class="link-preview portfolio-lightbox"
-                  data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/wcsiswa.jpg" class="img-fluid" alt="">
+                <a href="assets/img/wcsiswa.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -297,9 +286,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/ruangguru3.jpeg" class="img-fluid" alt="">
-                <a href="../assets/img/ruangguru3.jpeg" class="link-preview portfolio-lightbox"
-                  data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/ruangguru3.jpeg" class="img-fluid" alt="">
+                <a href="assets/img/ruangguru3.jpeg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -313,9 +301,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/toilet2.jpg" class="img-fluid" alt="">
-                <a href="assets/img/toilet2.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
-                  title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/toilet2.jpg" class="img-fluid" alt="">
+                <a href="assets/img/toilet2.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -329,9 +316,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="../assets/img/toilet1.jpg" class="img-fluid" alt="">
-                <a href="../assets/img/toilet1.jpg" class="link-preview portfolio-lightbox"
-                  data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="assets/img/toilet1.jpg" class="img-fluid" alt="">
+                <a href="assets/img/toilet1.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="#portfolio" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -359,7 +345,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="../assets/img/prestasi2.jpg" alt="">
+              <img src="assets/img/prestasi2.jpg" alt="">
               <h4>Juara 1</h4>
               <span>Cerdas Cermat tingkat nasional</span>
               <p>
@@ -376,7 +362,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="../assets/img/perestasi.jpg" alt="">
+              <img src="assets/img/perestasi.jpg" alt="">
               <h4>Juara 2</h4>
               <span>Programing Language</span>
               <p>
@@ -393,7 +379,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="../assets/img/prestasi5.jpg" alt="">
+              <img src="assets/img/prestasi5.jpg" alt="">
               <h4>Juara 1</h4>
               <span>Story Telling</span>
               <p>
@@ -553,8 +539,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
