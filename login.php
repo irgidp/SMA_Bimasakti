@@ -1,6 +1,6 @@
+<?php include_once("../functions.php");?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,9 +39,24 @@
                 </div>
                 <input name="login" id="login" class="btn btn-block login-btn mb-4 btn-primary" type="button" value="Login">
               </form>
-              <p class="login-card-footer-text">Belum punya akun? <a href="#!" class="text-reset">Register disini</a>
+              <p class="login-card-footer-text">Belum punya akun? <a href="utama/register.php" class="text-reset">Register disini</a>
               </p>
-
+              <?php
+              if (isset($_GET["error"])) {
+                $error = $_GET["error"];
+              	if ($error == 1)
+		              showError("IdPelatih dan password tidak sesuai.");
+	              else if ($error == 2)
+		              showError("Error database. Silahkan hubungi administrator");
+	              else if ($error == 3)
+		              showError("Koneksi ke Database gagal. Autentikasi gagal.");
+	              else if ($error == 4)
+		              showError("Anda tidak boleh mengakses halaman karena belum login.
+		              Silahkan login terlebih dahulu.");
+	              else
+		              showError("Unknown Error.");  
+                    } 
+                  ?>
             </div>
           </div>
           <div class="col-md-6">

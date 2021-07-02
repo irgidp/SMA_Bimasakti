@@ -85,12 +85,20 @@ session_start(); ?>
                             <div class="sb-nav-link-icon "><i class="bi bi-speedometer2"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="keloladataguru.php">
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchSiswa.html">
                             <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
-                            Kelola Guru
+                            Search Siswa
+                        </a>
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="inputnilai.html">
+                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
+                            Input Nilai
+                        </a>
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="kelolanilai.php">
+                            <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
+                            Kelola Nilai
                         </a>
                         <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="keloladatasiswa.php">
-                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
+                            <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
                             Kelola Siswa
                         </a>
                         <!-- <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="index.html">

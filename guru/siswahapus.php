@@ -14,17 +14,17 @@ if (isset($_POST["TblHapus"])) {
             if ($db->affected_rows > 0) // jika ada data terhapus
                 echo "<script>
                 alert('Data berhasil dihapus')
-                document.location.href = '../admin/keloladatasiswa.php';
+                document.location.href = 'keloladatasiswa.php';
             </script>";
             else // Jika sql sukses tapi tidak ada data yang dihapus
                 echo "<script>
                 alert('Penghapusan gagal, karena data tidak ada!')
-                document.location.href = '../admin/keloladatasiswa.php';
+                document.location.href = 'keloladatasiswa.php';
             </script>";
         } else { // gagal query
             echo "<script>
             alert('Data gagal dihapus')
-            document.location.href = '../admin/keloladataguru.php';
+            document.location.href = 'keloladataguru.php';
         </script>";
         }
 ?>

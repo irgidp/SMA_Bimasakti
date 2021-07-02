@@ -55,11 +55,11 @@ include_once("../functions.php");
                             Dashboard
                         </a>
                         <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchSiswa.html">
-                            <div class="sb-nav-link-icon "><i class="bi bi-search"></i></div>
+                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
                             Search Siswa
                         </a>
                         <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="inputnilai.html">
-                            <div class="sb-nav-link-icon "><i class="bi bi-file-plus"></i></div>
+                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
                             Input Nilai
                         </a>
                         <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="kelolanilai.php">
@@ -70,6 +70,14 @@ include_once("../functions.php");
                             <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
                             Kelola Siswa
                         </a>
+                        <!-- <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="index.html">
+                            <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
+                            Kelola Nilai
+                        </a>
+                        <a class="nav-link btn btn-danger btn-pjg mx-auto mt-5 text-center btn-logout"
+                            href="index.html">
+                            Logout
+                        </a> -->
                     </div>
                 </div>
             </nav>
@@ -89,7 +97,7 @@ include_once("../functions.php");
                         getdatasiswa();
                         ?>
                         </div>
-                        <button type="button" class="btn btn-primary btn-pjg my-3">Tambah Data</button>
+                        <a href="tambahSiswa.php" type="button" class="btn btn-primary btn-pjg my-3">Tambah Data</a>
                         <br>
 
                     </div>

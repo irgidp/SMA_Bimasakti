@@ -81,16 +81,24 @@ session_start(); ?>
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading text-center fs-2">Menu</div>
-                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4 " href="dashboardAdmin.php">
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4 " href="dashboardGuru.php">
                             <div class="sb-nav-link-icon "><i class="bi bi-speedometer2"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="keloladataguru.php">
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchSiswa.html">
                             <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
-                            Kelola Guru
+                            Search Siswa
+                        </a>
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="inputnilai.html">
+                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
+                            Input Nilai
+                        </a>
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="kelolanilai.php">
+                            <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
+                            Kelola Nilai
                         </a>
                         <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="keloladatasiswa.php">
-                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
+                            <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
                             Kelola Siswa
                         </a>
                         <!-- <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="index.html">
@@ -112,70 +120,68 @@ session_start(); ?>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-5">
-                    <h1 class="mt-5 bg-light">Tambah Data Siswa</h1>
+                    <h1 class="mt-5 bg-light">Hapus Data Siswa</h1>
                     <div class="row">
-                        <form method="post" name="frm" action="siswasimpan.php" onclick="validasidata()">
+                        <?php
+                            if (isset($_GET["nis"])) {
+                                $db = dbConnect();
+                                $nis = $db->escape_string($_GET["nis"]); // terenkripsi
+                                //decrypt dulu
+                                $nis = ($nis);
+
+                                if ($datasiswa = getdatasiswabynis($nis)) { // cari data produk, kalau ada simpan di $data
+                        ?>
+                        <form method="post" name="frm" action="siswahapus.php" onclick="validasidata()">
                             <div class="col-md-12 py-2">
                                 <label for="nis" class="form-label fw-bold">NIS</label>
-                                <input type="text" id="nis" name="nis" class="form-control" placeholder="Masukkan NIS"
-                                    autofocus>
+                                <input type="text" id="nis" name="nis" class="form-control"
+                                    value="<?php echo $datasiswa["nis"]; ?>" readonly>
                             </div>
 
                             <div class="col-md-12 py-2">
                                 <label for="nama_siswa" class="form-label fw-bold">Nama</label>
                                 <input type="text" id="nama_siswa" name="nama_siswa" class="form-control"
-                                    placeholder="Masukkan Nama">
+                                    value="<?php echo $datasiswa["nama_siswa"]; ?>" readonly>
                             </div>
 
                             <div class="col-md-12 py-2">
                                 <label for="jenis_kelamin" class="form-label fw-bold">Jenis Kelamin</label>
                                 <br>
-                                <input type="radio" name="jenis_kelamin" value="L"
-                                    value="<?php echo $datasiswa["jenis_kelamin"]; ?>"> Laki-laki<br>
-                                <input type="radio" name="jenis_kelamin" value="P"
-                                    value="<?php echo $datasiswa["jenis_kelamin"]; ?>"> Perempuan<br>
+                                <input type="radio" name="jenis_kelamin" value="L" disabled
+                                    <?php if (isset($datasiswa['jenis_kelamin']) && $datasiswa['jenis_kelamin']=="L") echo "checked";?>>
+                                Laki-laki<br>
+                                <input type="radio" name="jenis_kelamin" value="P" disabled
+                                    <?php if (isset($datasiswa['jenis_kelamin']) && $datasiswa['jenis_kelamin']=="P")  echo "checked";?>>
+                                Perempuan<br>
                             </div>
                             <div class="col-md-12 py-2">
                                 <label for="kelas" class="form-label fw-bold">Kelas</label>
-                                <select type="text" name="kelas" id="kelas" class="form-select">
-                                    <option selected value="">-- Pilih Kelas --</option>
-                                    <option name="kelas">IPA1</option>
-                                    <option name="kelas">IPA2</option>
-                                    <option name="kelas">IPA3</option>
-                                    <option name="kelas">IPS1</option>
-                                    <option name="kelas">IPS2</option>
-                                    <option name="kelas">IPS3</option>
-                                </select>
+                                <input type="text" name="kelas" size="7" maxlength="6" id="kelas" class="form-control"
+                                    value="<?php echo $datasiswa["kelas"]; ?>" readonly>
                             </div>
 
                             <div class="col-md-12 py-2">
                                 <label for="jurusan" class="form-label fw-bold">Jurusan</label>
-                                <select type="text" name="jurusan" id="jurusan" class="form-select">
-                                    <option selected value="">-- Pilih Jurusan --</option>
-                                    <option name="jurusan" value="IPA">IPA</option>
-                                    <option name="jurusan" value="IPS">IPS</option>
-                                </select>
+                                <input type="text" name="jurusan" id="jurusan" class="form-control"
+                                    value="<?php echo $datasiswa["jurusan"]; ?>" readonly>
                             </div>
                             <div class="col-md-12 py-2">
-                                <label for="jurusan" class="form-label fw-bold">NIP & Nama Guru</label>
-                                <select type="text" name="nip" id="nip" class="form-select">
-                                    <option value="">-- Pilih Guru Yang Terdaftar --</option>
-                                    <?php
-                                            $db = dbConnect();
-                                            $res = $db->query("SELECT * FROM guru ORDER BY nip");
-                                            while ($data = mysqli_fetch_array($res)) :
-                                         ?>
-                                    <option value="<?= $data['nip'] ?>">
-                                        <?= $data['nip'] . " | " . $data['nama_guru'] ?></option>
-                                    <?php
-                                            endwhile;
-                                        ?>
-                                </select>
+                                <label for="nip" class="form-label fw-bold">Nama Guru</label>
+                                <input type="text" name="nip" id="nip" class="form-control"
+                                    value="<?= $datasiswa['nama_guru'] ?>" readonly>
                             </div>
+                            <?php
+                                } else
+                                    echo "Data siswa dengan nis : $nis tidak ada!";
+                             ?>
+                            <?php
+                                } else
+                                    echo "Data siswa tidak ada!";
+                            ?>
                             <!-- Button Ubah -->
                             <div class="col-md-12 py-2">
-                                <button type="submit" class="btn btn-primary btn-pjg" name="TblSimpan"
-                                    value="Simpan">Simpan</button>
+                                <button type="submit" class="btn btn-danger btn-pjg" name="TblHapus"
+                                    value="Update">Hapus</button>
                             </div>
                         </form>
 
