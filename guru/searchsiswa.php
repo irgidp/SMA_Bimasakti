@@ -18,7 +18,6 @@ include_once("../functions.php");
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
-
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
@@ -54,12 +53,12 @@ include_once("../functions.php");
                             <div class="sb-nav-link-icon "><i class="bi bi-speedometer2"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchsiswa.php">
-                            <div class="sb-nav-link-icon "><i class="bi bi-search"></i></div>
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchSiswa.php">
+                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
                             Search Siswa
                         </a>
                         <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="inputnilai.html">
-                            <div class="sb-nav-link-icon "><i class="bi bi-file-plus"></i></div>
+                            <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
                             Input Nilai
                         </a>
                         <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="kelolanilai.php">
@@ -70,6 +69,14 @@ include_once("../functions.php");
                             <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
                             Kelola Siswa
                         </a>
+                        <!-- <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="index.html">
+                            <div class="sb-nav-link-icon "><i class="bi bi-pencil-square"></i></div>
+                            Kelola Nilai
+                        </a>
+                        <a class="nav-link btn btn-danger btn-pjg mx-auto mt-5 text-center btn-logout"
+                            href="index.html">
+                            Logout
+                        </a> -->
                     </div>
                 </div>
             </nav>
@@ -77,25 +84,57 @@ include_once("../functions.php");
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid bg-light px-4">
-                    <h1 class="mt-4">Kelola Data Siswa</h1>
+                    <h1 class="mt-4">Cari Data Siswa</h1>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
                             Tabel Data Siswa
                         </div>
                         <div class="card-body">
+                        <form method='post'>
+                        <table>
+                        <tr><td></td>
+                        <td><input type="text" width="20" name="dicari" value="<?php echo isset($_POST["dicari"])?$_POST["dicari"]:"";?>"></td>
+                        <td><input type="submit" name="TblCari" value="Cari">
+	                    <a href="klub.php"><button>Hapus</button></a>
+                        </table>
+                        </form>
                             <?php
-                        $db = dbConnect();
-                        getdatasiswa();
-                        ?>
-                        </div>
-                        <button type="button" class="btn btn-primary btn-pjg my-3">Tambah Data</button>
-                        <br>
+                                if(isset($_POST["TblCari"])){
+                                    $db = dbConnect();
+                                    if($db->connect_errno==0){
+                                        $dicari=$db->escape_string($_POST["dicari"]);
+                                        $sql="SELECT * FROM siswa WHERE nis like '$dicari%' or nama_siswa like '$dicari%'";
+                                        $res=$db->query($sql);
+                                        if($res){ // eksekusi sql sukses
+                                            ?>
+                                            <?php
+                                            $data=$res->fetch_all(); // ambil seluruh baris data
+                                            foreach($data as $barisdata){ // telusuri satu per satu
+                                                ?>
+                                                <div style="border:3px black solid;margin:5px;padding:10px">
+			                                    <div><?php echo $barisdata[1];?></div>
+			                                    <hr noshade color="black">
+                                                <div>Jenis Kelamin : <?php echo $barisdata[2];?>aki-Laki</div>
+                                                <hr noshade color="black">
+                                                <div>Kelas  : <?php echo $barisdata[3];?></div>
+                                                <hr noshade color="black">
+                                                <div>Jurusan : <?php echo $barisdata[4];?></div>
+			                                    </div>
+			                                    <?php
+		                                    }
+		                                    $res->free();
 
-                    </div>
-                </div>
-            </main>
-            <!-- <div class="div">
+                                    }else 
+                                    echo "Gagal Eksekusi SQL".(DEVELOPMENT?" : ".$db->error:"")."<br>";  
+                                }
+                                else
+                                echo "Gagal koneksi".(DEVELOPMENT?" : ".$db->connect_error:"")."<br>";
+                                }
+                                else
+                                echo "Isilah keyword pencarian untuk melakukan pencarian.";
+                              ?>    
+                             <!-- <div class="div">
                 <footer class="py-4 mx-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">

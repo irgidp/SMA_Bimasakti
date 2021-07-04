@@ -54,7 +54,7 @@ include_once("../functions.php");
                             <div class="sb-nav-link-icon "><i class="bi bi-speedometer2"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchSiswa.html">
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchSiswa.php">
                             <div class="sb-nav-link-icon "><i class="bi bi-journal-text"></i></div>
                             Search Siswa
                         </a>

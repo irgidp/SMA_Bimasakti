@@ -42,7 +42,7 @@ include_once("../functions.php");
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="../login.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -59,7 +59,7 @@ include_once("../functions.php");
                             <div class="sb-nav-link-icon "><i class="bi bi-speedometer2"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchSiswa.html">
+                        <a class="nav-link btn btn-color btn-pjg mx-auto my-4" href="searchsiswa.php">
                             <div class="sb-nav-link-icon "><i class="bi bi-search"></i></div>
                             Search Siswa
                         </a>
