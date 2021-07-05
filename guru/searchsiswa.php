@@ -81,30 +81,34 @@ include_once("../functions.php");
                 </div>
             </nav>
         </div>
-        <div id="layoutSidenav_content">
+         <!-- Content Sidenav -->
+         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid bg-light px-4">
-                    <h1 class="mt-4">Cari Data Siswa</h1>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Tabel Data Siswa
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center my-3">Cari Data Siswa</h1>
                         </div>
-                        <div class="card-body">
-                        <form method='post'>
-                        <table>
-                        <tr><td></td>
-                        <td><input type="text" width="20" name="dicari" value="<?php echo isset($_POST["dicari"])?$_POST["dicari"]:"";?>"></td>
-                        <td><input type="submit" name="TblCari" value="Cari">
-	                    <a href="klub.php"><button>Hapus</button></a>
-                        </table>
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <img src="../assets/img/logo.png" class="rounded" alt="..." width="93px">
+                            </div>
+                        </div>
+                        <div class="col-md-1 my-4">
+                        </div>
+                        <div class="col-md-10">
+                            <form method="post" div class="input-group" >
+                        <td><input type="search" class="form-control rounded-start" width="20" name="dicari" placeholder="Masukkan NIS/Nama" 
+                        aria-label="Search" aria-describedby="search-addon" value="<?php echo isset($_POST["dicari"])?$_POST["dicari"]:"";?>"></td>
+                        <td><input type="submit" class="btn btn-color2 rounded-end" name="TblCari" value="Cari">
+                        </div>
                         </form>
                             <?php
                                 if(isset($_POST["TblCari"])){
                                     $db = dbConnect();
                                     if($db->connect_errno==0){
                                         $dicari=$db->escape_string($_POST["dicari"]);
-                                        $sql="SELECT * FROM siswa WHERE nis like '$dicari%' or nama_siswa like '$dicari%'";
+                                        $sql="SELECT * FROM nilaiSiswa WHERE nis like '$dicari%' or nama_siswa like '$dicari%'";
                                         $res=$db->query($sql);
                                         if($res){ // eksekusi sql sukses
                                             ?>
@@ -112,15 +116,76 @@ include_once("../functions.php");
                                             $data=$res->fetch_all(); // ambil seluruh baris data
                                             foreach($data as $barisdata){ // telusuri satu per satu
                                                 ?>
-                                                <div style="border:3px black solid;margin:5px;padding:10px">
-			                                    <div><?php echo $barisdata[1];?></div>
-			                                    <hr noshade color="black">
-                                                <div>Jenis Kelamin : <?php echo $barisdata[2];?>aki-Laki</div>
-                                                <hr noshade color="black">
-                                                <div>Kelas  : <?php echo $barisdata[3];?></div>
-                                                <hr noshade color="black">
-                                                <div>Jurusan : <?php echo $barisdata[4];?></div>
-			                                    </div>
+                                                <div class="col-md-1">
+                                                </div>
+
+                                                <div class="col-md-1">
+                                                </div>
+                                                 <div class="col-md-10 py-5">
+                                                    <div class="container-fluid bg-light rounded-css">
+                                                    <div class="row">
+                                                    <div class="col-md-6">
+                                                    <table class="table table-borderless text-left">
+                                                    <tbody>
+                                                    <tr>
+			                                    <td width="10">NIS : <?php echo $barisdata[0];?></td>
+                                            </tr>
+                                                <tr>
+                                                <td width="10">Nama Siswa: <?php echo $barisdata[1];?></td>
+                                            </tr>
+                                                <tr>
+                                                <td width="10">Kelas  : <?php echo $barisdata[2];?></td>
+                                            </tr>
+                                                <tr>
+                                                <td width="10">Jurusan : <?php echo $barisdata[3];?></td>
+                                            </tr>
+                                                </tbody>
+                                        </table>
+                                    </div>
+
+                                      </div>
+
+                                        </div>
+                                         </div>
+                                             <div class="col-md-1">
+                                                 </div>
+                                        <center>
+                                        <div class="col-md-1">
+                                        </div>
+                                        <div class="col-md-1">
+                                        </div>
+                                        <div class="col-md-10 py-5">
+                                        <table class="table table-bordered border-dark border-3">
+                                        <thead>
+                                        <tr>
+                                        <th scope="col">Biologi</th>
+                                        <th scope="col">Kimia</th>
+                                        <th scope="col">Fisika</th>
+                                        <th scope="col">Bahasa Indonesia</th>
+                                        <th scope="col">Matematika</th>
+                                        <th scope="col">TIK</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><?php echo $barisdata[4];?></td>
+                                        <td><?php echo $barisdata[5];?></td>
+                                        <td><?php echo $barisdata[6];?></td>
+                                        <td><?php echo $barisdata[7];?></td>
+                                        <td><?php echo $barisdata[8];?></td>
+                                        <td><?php echo $barisdata[9];?></td>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                    </div>
+                </div>
+            </main>
 			                                    <?php
 		                                    }
 		                                    $res->free();
@@ -132,7 +197,7 @@ include_once("../functions.php");
                                 echo "Gagal koneksi".(DEVELOPMENT?" : ".$db->connect_error:"")."<br>";
                                 }
                                 else
-                                echo "Isilah keyword pencarian untuk melakukan pencarian.";
+                                echo "";
                               ?>    
                              <!-- <div class="div">
                 <footer class="py-4 mx-auto">
@@ -155,6 +220,7 @@ include_once("../functions.php");
     <script src="../assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="../assets/js/datatables-simple-demo.js"></script>
+</center>
 </body>
 
 </html>

@@ -24,7 +24,7 @@ if (isset($_POST["TblHapus"])) {
         } else { // gagal query
             echo "<script>
             alert('Data gagal dihapus')
-            document.location.href = 'keloladataguru.php';
+            document.location.href = 'keloladatasiswa.php';
         </script>";
         }
 ?>
