@@ -251,3 +251,129 @@ function getdataguru()
 			{
 			}
 ?>
+
+
+<!-- kelola nilai -->
+<?php
+		// data nilai
+		function getdatanilai()
+		{
+			$db = dbConnect();
+			if ($db->connect_errno == 0) {
+				$res = $db->query("SELECT b.nis,a.biologi,a.kimia,a.fisika,a.bahasaindonesia,a.matematika, a.tik FROM nilai_siswa a JOIN siswa b ON a.nis=b.nis");
+				if ($res) {
+		?>
+<?php
+					if (isset($_GET['cari'])) {
+						// var_dump($_GET);
+						$cari = $_GET['cari'];
+						$res = $db->query("SELECT b.nis,a.biologi,a.kimia,a.fisika,a.bahasaindonesia,a.matematika, a.tik FROM nilai_siswa a JOIN siswa b ON a.nis=b.nis where b.nis like'%" . $cari . "%'");
+					} else {
+						$res = $db->query("SELECT b.nis,a.biologi,a.kimia,a.fisika,a.bahasaindonesia,a.matematika, a.tik FROM nilai_siswa a JOIN siswa b ON a.nis=b.nis ");
+					}
+					?>
+<table class="table table-bordered text-center mb-5" id="datatablesSimple">
+	<thead>
+		<tr>
+			<th>NIS</th>
+			<th>Biologi</th>
+			<th>Kimia</th>
+			<th>Fisika</th>
+			<th>B Indonesia </th>
+			<th>Matematika</th>
+			<th>TIK</th>
+			<th>Aksi</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+				$data = $res->fetch_all(MYSQLI_ASSOC);
+				foreach ($data as $barisdata) {
+			?>
+		<tr>
+			<td><?php echo $barisdata["nis"]; ?></td>
+			<td><?php echo $barisdata["biologi"]; ?></td>
+			<td><?php echo $barisdata["kimia"]; ?></td>
+			<td><?php echo $barisdata["fisika"]; ?></td>
+			<td><?php echo $barisdata["bahasaindonesia"]; ?></td>
+			<td><?php echo $barisdata["matematika"]; ?></td>
+			<td><?php echo $barisdata["tik"]; ?></td>
+			<td><a href="editNilai.php?nis=<?php echo $barisdata["nis"]; ?>" class="btn-sm btn-success">Edit</a> |
+				<a href="hapusNilai.php?nis=<?php echo $barisdata["nis"]; ?>" class="btn-sm btn-danger">Hapus</a>
+			</td>
+		</tr>
+		<tr>
+			<?php
+					}
+					$res->free();
+					return $data;
+				} else
+					return FALSE;
+			} else
+				return FALSE;
+				?>
+	</tbody>
+</table>
+</div>
+</tr>
+
+<?php
+			}
+			// datasiswa
+			function datanilai()
+			{
+				$db = dbConnect();
+				if ($db->connect_errno == 0) {
+					$res = $db->query("SELECT 
+					b.nis,
+					a.biologi,
+					a.kimia,
+					a.fisika,
+					a.bahasaindonesia,
+					a.matematika,
+					a.tik
+					FROM nilai_siswa a 
+					JOIN siswa b 
+					ON a.nis=b.nis");
+					if ($res) {
+						if ($res->num_rows > 0) {
+							$data = $res->fetch_assoc();
+							$res->free();
+							return $data;
+						} else
+							return FALSE;
+					} else
+						return FALSE;
+				} else
+					return FALSE;
+			}
+
+			function getdatanilaibynis($nis)
+			{
+				$db = dbConnect();
+				if ($db->connect_errno == 0) {
+					$res = $db->query("SELECT 
+					b.nis,
+					a.biologi,
+					a.kimia,
+					a.fisika,
+					a.bahasaindonesia,
+					a.matematika,
+					a.tik
+					FROM nilai_siswa a 
+					JOIN siswa b 
+					ON a.nis=b.nis
+					WHERE a.nis = '$nis'");
+					if ($res) {
+						if ($res->num_rows > 0) {
+							$data = $res->fetch_assoc();
+							$res->free();
+							return $data;
+						} else
+							return FALSE;
+					} else
+						return FALSE;
+				} else
+					return FALSE;
+			}
+?>
